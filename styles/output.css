@@ -2941,6 +2941,23 @@ nav {
   color: #ffc506;
 }
 
+@media (max-width: 1200px) {
+  .main {
+    display: block;
+  }
+
+  .sobre-nos img {
+    width: 600px;
+    margin-left: -2px;
+  }
+}
+
+@media (max-width: 980px) {
+  html {
+    font-size: 50%;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -3042,5 +3059,3 @@ nav {
     }
   }
 }
-
-

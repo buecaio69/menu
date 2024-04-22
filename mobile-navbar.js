@@ -9,7 +9,7 @@ class MobileNavbar {
     }
   
     animateLinks() {
-      this.navLinks.forEach((link, index) => {
+      this.navlinks.forEach((link, index) => {
         link.style.animation
           ? (link.style.animation = "")
           : (link.style.animation = `navlinkFade 0.5s ease forwards ${
@@ -19,7 +19,7 @@ class MobileNavbar {
     }
   
     handleClick() {
-      this.navList.classList.toggle(this.activeClass);
+      this.navlist.classList.toggle(this.activeClass);
       this.mobileMenu.classList.toggle(this.activeClass);
       this.animateLinks();
     }
