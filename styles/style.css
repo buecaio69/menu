@@ -7,6 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 body {
+    font-size: 17px;
     background-color: #f6f7f8;
 }
 
@@ -35,103 +36,109 @@ a {
     color: #fff;
     text-decoration: none;
     transition: 0.3s;
-  }
-  
-  a:hover {
+}
+
+a:hover {
     opacity: 0.7;
-  }
-  
-  .logo {
+}
+
+.logo {
     font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 4px;
-  }
-  
-  nav {
+}
+
+nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
     background: #23232e;
     height: 8vh;
-  }
+}
 
-  .nav-list {
+.nav-list {
     list-style: none;
     display: flex;
-  }
+}
 
-  .nav-list li {
+.nav-list li {
     letter-spacing: 3px;
     margin-left: 32px;
-  }
+}
 
-  .mobile-menu {
+.mobile-menu {
     display: none;
     cursor: pointer;
-  }
-  
-  .mobile-menu div {
+}
+
+.mobile-menu div {
     width: 32px;
     height: 2px;
     background: #fff;
     margin: 8px;
     transition: 0.3s;
-  }
-  
-  @media (max-width: 999px) {
+}
+
+@media (max-width: 999px) {
     body {
-      overflow-x: hidden;
+        overflow-x: hidden;
     }
+
     .nav-list {
-      position: absolute;
-      top: 8vh;
-      right: 0;
-      width: 50vw;
-      height: 92vh;
-      background: #23232e;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-      transform: translateX(100%);
-      transition: transform 0.3s ease-in;
-    } 
-    
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 100%;
+        background: #23232e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in;
+    }
+
     .nav-list li {
-      margin-left: 0;
-      opacity: 0;
+        margin-left: 0;
+        opacity: 0;
     }
+
     .mobile-menu {
-      display: block;
+        display: block;
     }
-  }
-  
-  .nav-list.active {
+}
+
+    .nav-list.active {
+    transform: translateY(0);
+}
+
+@keyframes navlinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mobile-menu.active {
     transform: translateX(0);
   }
-  
-  @keyframes navlinkFade {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  .mobile-menu.active .line1 {
+
+.mobile-menu.active .line1 {
     transform: rotate(-45deg) translate(-8px, 8px);
-  }
-  
-  .mobile-menu.active .line2 {
+}
+
+.mobile-menu.active .line2 {
     opacity: 0;
-  }
-  
-  .mobile-menu.active .line3 {
+}
+
+.mobile-menu.active .line3 {
     transform: rotate(45deg) translate(-5px, -7px);
-  }
+}
 
 
 .content {
@@ -155,8 +162,8 @@ a {
 
 
 .logo h3 {
-   color: white;
-   font-size: 1.6rem;
+    color: white;
+    font-size: 1.6rem;
 
 }
 
@@ -173,7 +180,7 @@ a {
     justify-content: space-between;
 }
 
-.content .list-menu li a{
+.content .list-menu li a {
     padding-top: 3rem;
     padding-bottom: 2rem;
     padding-left: 1rem;
@@ -185,9 +192,9 @@ a {
     transition: all 200ms ease-in;
 }
 
-.content .list-menu li a:hover{
+.content .list-menu li a:hover {
     background-color: #333333;
-    border-bottom: 4px solid #ffc506;  
+    border-bottom: 4px solid #ffc506;
     color: #ffc506;
 }
 
@@ -195,7 +202,7 @@ a {
 
 /* Sobre nós*/
 
-.sobre-nos{
+.sobre-nos {
     background-color: #1f1e1f;
     width: 100%;
     padding-bottom: 5rem;
@@ -248,7 +255,7 @@ a {
 }
 
 .contatos h3 {
-    font-size: 6rem;  
+    font-size: 6rem;
     margin-bottom: 3rem;
 }
 
@@ -274,7 +281,7 @@ a {
 @media (max-width: 1200px) {
     .main {
         display: block;
-        
+
     }
 
     .sobre-nos img {
@@ -282,13 +289,13 @@ a {
         margin-left: -2px;
     }
 
-    
+
 }
 
 @media (max-width: 980px) {
-   
+
     html {
         font-size: 50%;
     }
-    
+
 }

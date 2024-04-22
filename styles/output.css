@@ -2204,6 +2204,16 @@ video {
   line-height: 1.25rem;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -2680,6 +2690,7 @@ video {
 }
 
 body {
+  font-size: 17px;
   background-color: #f6f7f8;
 }
 
@@ -2761,13 +2772,12 @@ nav {
     position: absolute;
     top: 8vh;
     right: 0;
-    width: 50vw;
-    height: 92vh;
+    width: 100%;
     background: #23232e;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    transform: translateX(100%);
+    transform: translateY(-100%);
     transition: transform 0.3s ease-in;
   }
 
@@ -2782,7 +2792,7 @@ nav {
 }
 
 .nav-list.active {
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 @keyframes navlinkFade {
@@ -2795,6 +2805,10 @@ nav {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
 }
 
 .mobile-menu.active .line1 {
@@ -2845,7 +2859,7 @@ nav {
   justify-content: space-between;
 }
 
-.content .list-menu li a{
+.content .list-menu li a {
   padding-top: 3rem;
   padding-bottom: 2rem;
   padding-left: 1rem;
@@ -2857,7 +2871,7 @@ nav {
   transition: all 200ms ease-in;
 }
 
-.content .list-menu li a:hover{
+.content .list-menu li a:hover {
   background-color: #333333;
   border-bottom: 4px solid #ffc506;
   color: #ffc506;
@@ -2865,7 +2879,7 @@ nav {
 
 /* Sobre nós*/
 
-.sobre-nos{
+.sobre-nos {
   background-color: #1f1e1f;
   width: 100%;
   padding-bottom: 5rem;
