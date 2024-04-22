@@ -189,41 +189,31 @@ if(isOpen){
 }
 
 // CEP
-const cep = document.querySelector('#cep');
-const address = document.querySelector('#address');
-const bairro = document.querySelector('#bairro');
-const cidade = document.querySelector('#cidade');
-const message = document.querySelector('#message');
+const cepInput = document.getElementById('cep');
 
-cep.addEventListener('focusout', async () => {
+// Adicionando um evento de escuta para o campo de entrada do CEP
+cepInput.addEventListener('change', () => {
+    // Obtendo o valor do CEP digitado pelo usuário
+    const cep = cepInput.value;
 
-    try{
-        const onlyNumbers = /^[0-9]+$/;
-        const cepValid = /^[0-9]{8}$/;
-    
-        if(onlyNumbers.test(cep.value) || !cepValid.test(cep.value)) {
-            throw {cep_error: 'CEP invalido' };
-        }
-
-        const response = await fetch(`https://viacep.com.br/ws/${cep.value}/json/`);
-
-        if(!response.ok) {
-            throw await response.json();
-        }
-
-        const responseCep = await response.json();
-
-        address.value = responseCep.logradouro;
-        bairro.value = responseCep.bairro;
-        cidade.value = responseCep.localidade
-
-    }catch (error) {
-        if(error?.cep_error) {
-            message.textContent = error.cep_error;
-            setTimeout(() => {
-                message.textContent = '';
-            }, 5000);
-        }
+    // Verificando se o CEP tem o formato válido (opcional)
+    const cepRegex = /^[0-9]{8}$/;
+    if (!cepRegex.test(cep)) {
+        alert('CEP inválido! O CEP deve conter apenas números e ter 8 dígitos.');
+        return;
     }
 
-})
+    // Enviando uma solicitação para a API ViaCEP para obter os detalhes do endereço
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(response => response.json())
+        .then(data => {
+            // Preenchendo os campos de endereço com os dados recebidos da API
+            document.getElementById('address').value = data.logradouro;
+            document.getElementById('bairro').value = data.bairro;
+            document.getElementById('cidade').value = data.localidade;
+        })
+        .catch(error => {
+            console.error('Ocorreu um erro ao buscar os dados do endereço:', error);
+            alert('Ocorreu um erro ao buscar os dados do endereço. Por favor, tente novamente.');
+        });
+});
