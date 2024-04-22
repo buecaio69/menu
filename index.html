@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lope's</title>
+    <link rel="shortcut icon" href="./asets/imagens/hamburguer.png" type="image/x-icon">
+    <link rel="stylesheet" href="asets/css/style.css">
+</head>
+<body>
+    <div class="top-slice"></div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form" onsubmit="return validarFormulario()">
+            <div class="form-group">
+                <label for="username">Nome de usuário:</label>
+                <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <div style="position: relative;">
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                    <span id="olho-aberto" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;" onclick="mostraSenha(true)">➖</span>
+                    <span id="olho-fechado" style="display: none; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;" onclick="mostraSenha(false)">👁️</span>
+                </div>
+            </div>
+            <p id="mensagem-login"></p>
+            <button id="login-btn" type="submit">Login</button>
+            <div class="remember">
+                <p class="cadastro-link">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a>.</p>
+                <p class="esqueceu-senha"><a href="esqueceu_senha.html">Esqueceu a senha?</a></p>
+            </div>
+        </form>
+    </div>
+    <div class="bottom-slice"></div>
+    <div class="rain"></div>
+    <div id="loader"></div>
+    <script src="asets/js/aplicacoes.js"></script>
+</body> 
+</html>
